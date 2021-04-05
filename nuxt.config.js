@@ -71,7 +71,7 @@ export default {
           baseExperience: 'Base Experience',
           height: 'Height',
           weight: 'Peso',
-          types: 'Tipos',
+          types: 'Types',
           abilities: 'Abilities',
           back: 'Back'
         },
