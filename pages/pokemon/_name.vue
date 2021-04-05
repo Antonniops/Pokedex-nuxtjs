@@ -96,7 +96,7 @@ export default {
       this.pokeService
         .pokemonByName(this.pokename)
         .then((res) => {
-          if (res.status === 404) this.$router.push("/404");
+          if (res.status === 404) return this.$router.push("/404");
           if (res.status === 200) return res.json();
         })
         .then((data) => {

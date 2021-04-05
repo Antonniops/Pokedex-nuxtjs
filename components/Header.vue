@@ -54,19 +54,23 @@ export default {
   name: 'pokeheader',
   data() {
     return {
-      searchQuery: "",
-    };
+      searchQuery: '',
+    }
   },
   methods: {
     search() {
       // Emitir evento de búsqueda
-      this.$router.push({ path: '/pokemon/' + this.searchQuery.toLowerCase() });
+      if (this.searchQuery) {
+        this.$router.push({
+          path: '/pokemon/' + this.searchQuery.toLowerCase(),
+        })
+      }
     },
   },
   computed: {
     searchMessage() {
-      return `Encontrados: `;
+      return `Encontrados: `
     },
   },
-};
+}
 </script>
