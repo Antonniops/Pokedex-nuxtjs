@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/pokemon/list", {data:[{}],fetch:{},mutations:void 0});
