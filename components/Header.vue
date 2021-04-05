@@ -29,13 +29,14 @@
               </nuxt-link>
             </li>
           </ul>
-          <nuxt-link
+          <p
             v-for="locale in availableLocales"
             :key="locale.code"
-            :to="switchLocalePath(locale.code)"
-            class="mx-2"
-            >{{ locale.name }}</nuxt-link
+            @click="changeLang(locale.code)"
+            class="nav-item mb-0 me-5 px-2 py-1 btn btn-outline-primary"
           >
+            {{ locale.name }}
+          </p>
 
           <form class="d-flex" @submit.prevent>
             <input
@@ -85,6 +86,11 @@ export default {
     },
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
+    },
+  },
+  methods: {
+    changeLang() {
+      this.$i18n.locale = 'en'
     },
   },
 }
