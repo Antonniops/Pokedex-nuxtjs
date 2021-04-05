@@ -79,6 +79,9 @@ export default {
         })
       }
     },
+    changeLang() {
+      this.$i18n.locale = 'en'
+    },
   },
   computed: {
     searchMessage() {
@@ -86,11 +89,6 @@ export default {
     },
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
-    },
-  },
-  methods: {
-    changeLang() {
-      this.$i18n.locale = 'en'
     },
   },
 }
