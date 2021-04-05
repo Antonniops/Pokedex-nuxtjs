@@ -33,7 +33,51 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    'nuxt-i18n',
+  ],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English'
+      },
+      {
+        code: 'es',
+        name: 'Español'
+      },
+
+    ],
+    defaultLocale: 'es',
+    vueI18n: {
+      fallbackLocale: 'es',
+      messages: {
+        es: {
+          home: 'Inicio',
+          about: 'Información',
+          search: 'Buscar',
+          baseExperience: 'Experiencia Base',
+          height: 'Altura',
+          weight: 'Peso',
+          types: 'Tipos',
+          abilities: 'Habilidades',
+          back: 'Volver'
+        },
+        en: {
+          home: 'Home',
+          about: 'About',
+          search: 'Search',
+          baseExperience: 'Base Experience',
+          height: 'Height',
+          weight: 'Peso',
+          types: 'Tipos',
+          abilities: 'Abilities',
+          back: 'Back'
+        },
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

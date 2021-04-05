@@ -19,12 +19,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <nuxt-link to="/pokemon/list" class="nav-link">
+                {{ $t('home') }}
+              </nuxt-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link">About</router-link>
+              <nuxt-link to="/about" class="nav-link">
+                {{ $t('about') }}
+              </nuxt-link>
             </li>
           </ul>
+          <nuxt-link
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+            class="mx-2"
+            >{{ locale.name }}</nuxt-link
+          >
+
           <form class="d-flex" @submit.prevent>
             <input
               class="form-control me-2"
@@ -39,7 +51,7 @@
               type="button"
               @click="search()"
             >
-              Buscar
+              {{ $t('search') }}
             </button>
           </form>
         </div>
@@ -70,6 +82,9 @@ export default {
   computed: {
     searchMessage() {
       return `Encontrados: `
+    },
+    availableLocales() {
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
     },
   },
 }

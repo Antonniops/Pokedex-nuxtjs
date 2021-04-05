@@ -12,19 +12,21 @@
         <h2 class="mb-5">{{ pokename }}</h2>
 
         <p class="text-start">
-          <b>Base Experience / Experiencia: </b>
+          <b>{{ $t('baseExperience') }} </b>
           <span>{{ pokemon.base_experience }}</span>
         </p>
         <p class="text-start">
-          <b>Height / Altura: </b>
+          <b>{{ $t('height') }}</b>
           <span>{{ pokemon.height / 10 }} m </span>
         </p>
         <p class="text-start">
-          <b>Weight / Peso: </b>
+          <b>{{ $t('weight') }}</b>
           <span>{{ pokemon.weight }} kg</span>
         </p>
 
-        <h3 class="text-start mt-5">Types / Tipos</h3>
+        <h3 class="text-start mt-5">
+          {{ $t('types') }}
+        </h3>
 
         <div class="row type mt-3">
           <span
@@ -37,7 +39,9 @@
           </span>
         </div>
 
-        <h3 class="text-start mt-5">Abilities / Habilidades</h3>
+        <h3 class="text-start mt-5">
+          {{ $t('abilities') }}
+        </h3>
 
         <div class="row type mt-3">
           <span
@@ -50,7 +54,9 @@
         </div>
 
         <div class="mt-5 text-center">
-          <button class="btn btn-warning text-white" @click="retroceder()">Volver</button>
+          <button class="btn btn-warning text-white" @click="retroceder()">
+            {{ $t('back') }}
+          </button>
         </div>
       </div>
     </div>
